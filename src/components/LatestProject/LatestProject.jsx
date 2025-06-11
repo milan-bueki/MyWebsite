@@ -49,7 +49,7 @@ export default function LatestProject() {
         </p>
 
         <a
-          href="https://github.com/deinbenutzername/dein-repo"
+          href="https://github.com/milan-bueki/MyWebsite"
           target="_blank"
           rel="noopener noreferrer"
           className="latest-link"

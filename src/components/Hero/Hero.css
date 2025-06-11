@@ -63,7 +63,7 @@
 }
 
 .hero-marquee-track {
-  margin-left: 155px; /* Passe an die Breite des Labels an */
+  margin-left: 155px;
   overflow: hidden;
   white-space: nowrap;
 }
