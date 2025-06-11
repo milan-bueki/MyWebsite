@@ -1,0 +1,84 @@
+#hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding: 20px;
+  max-width: 600px;
+  width: 100%;
+  color: white;
+}
+
+.hero-small-text {
+  font-size: 18px;
+  opacity: 0.7;
+  margin: 0;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-main-heading {
+  font-size: 48px;
+  color: #4682B4;
+  font-weight: bold;
+  margin: 10px 0 20px 0;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+/* === Marquee-Bereich === */
+.hero-marquee-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 1.5em;
+  font-size: 18px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-marquee-label {
+  position: absolute;
+  left: 0;
+  z-index: 2;
+  font-weight: bold;
+  color: #bb86fc;
+}
+
+.hero-marquee-track {
+  margin-left: 155px; /* Passe an die Breite des Labels an */
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.hero-marquee-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
