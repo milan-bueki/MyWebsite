@@ -4,11 +4,11 @@ import "./Hero.css";
 export default function Hero() {
   return (
     <section id="hero">
-      <img
+      {/*<img
         src="/portrait_schwarzweiß.PNG"
         alt="Hintergrundbild"
         className="hero-bg-image"
-      />
+      />*/}
 
       <div className="hero-inner">
         <p className="hero-small-text">I am</p>
