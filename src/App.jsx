@@ -27,7 +27,7 @@ function App() {
       <div style={{ ...styles.page, paddingTop: 0 /* Platz für fixed Header */ }}>
         <Hero />
         <LatestProject />
-        <Projects />
+        {/*<Projects />*/}
         <Contact />
         <Footer />
       </div>

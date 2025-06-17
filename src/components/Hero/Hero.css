@@ -82,3 +82,34 @@
     transform: translateX(-100%);
   }
 }
+.hero-download-container {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+.hero-download-wrapper {
+  width: 100%;
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-download-button {
+  padding: 0.75rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  backdrop-filter: blur(4px);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero-download-button:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+

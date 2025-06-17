@@ -24,6 +24,16 @@ export default function Hero() {
             </div>
           </div>
         </div>
+
+        <div className="hero-download-wrapper">
+          <a
+            href="/CV.pdf"
+            className="hero-download-button"
+            download
+          >
+            Download CV (German)
+          </a>
+        </div>
       </div>
     </section>
   );

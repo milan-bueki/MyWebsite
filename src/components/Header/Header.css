@@ -1,26 +1,32 @@
 /* Header.css */
 .header {
-  width: 90%;
+  width: 85%;
+  max-width: none;
   height: 60px;
   background-color: rgba(0, 0, 0, 0.6);
   color: #bbb;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 18px;
   font-weight: bold;
   position: fixed;
   top: 20px;
-  left: 60px;
+  left: 0;
+  right: 0;
   z-index: 1000;
+  padding: 0 60px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  padding: 0 20px;
   border-radius: 10px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0 auto;
+
 }
+
+
 
 .header-name {
   margin: 0;
@@ -41,4 +47,15 @@
 
 .header-links a:hover {
   color: #fff;
+}
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .header-links {
+    margin-top: 10px;
+  }
 }
