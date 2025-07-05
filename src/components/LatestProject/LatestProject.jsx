@@ -44,7 +44,7 @@ export default function LatestProject() {
         <p>
           This website was built using React and is hosted on a Raspberry Pi acting as a personal web server.
           Running modern web technologies such as React and CSS animations on a low-budget, self-hosted platform is both effective and reliable.
-          An NGINX reverse proxy handles traffic routing, and SSL certificates are automatically managed via Let's Encrypt for secure HTTPS access.
+          NGINX serves the static build of the site and handles HTTPS traffic using Let's Encrypt for automatic certificate management.
           This project was both enjoyable and insightful — it allowed me to deepen my practical skills in frontend development, server configuration, and secure web hosting, while also highlighting areas where I can still improve.
         </p>
 
