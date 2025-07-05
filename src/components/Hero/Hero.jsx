@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Hero.css";
 
 export default function Hero() {
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const handleDownload = (filePath) => {
+    const link = document.createElement("a");
+    link.href = filePath;
+    link.download = filePath.split("/").pop(); // z. B. "CV_de.pdf"
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setShowDropdown(false);
+  };
+
   return (
     <section id="hero">
       <img
@@ -25,14 +37,24 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero-download-wrapper">
-          <a
-            href="/CV.pdf"
+        <div className="hero-download-wrapper" style={{ position: "relative" }}>
+          <button
             className="hero-download-button"
-            download
+            onClick={() => setShowDropdown(!showDropdown)}
           >
-            Download CV (German)
-          </a>
+            Download CV
+          </button>
+
+          {showDropdown && (
+            <div className="hero-download-dropdown">
+              <button onClick={() => handleDownload("/CV_milanbueki_de.pdf")}>
+                German
+              </button>
+              <button onClick={() => handleDownload("/CV_milanbueki_en.pdf")}>
+                English
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </section>

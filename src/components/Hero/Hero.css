@@ -91,10 +91,12 @@
   z-index: 10;
 }
 .hero-download-wrapper {
-  width: 100%;
+  position: relative;
   margin-top: 4rem;
   display: flex;
   justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .hero-download-button {
@@ -113,3 +115,34 @@
   background-color: rgba(255, 255, 255, 0.25);
 }
 
+.hero-download-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  border: none;
+  border-radius: 8px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+
+.hero-download-dropdown button {
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.hero-download-dropdown button:hover {
+  background-color: #2a2a2a;
+}
