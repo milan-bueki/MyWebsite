@@ -20,7 +20,7 @@ export default function Hero() {
             <div className="hero-marquee-text">
               Information Security&nbsp;&nbsp;&nbsp;
               Network Security&nbsp;&nbsp;&nbsp;
-              Potentially Redteaming&nbsp;&nbsp;&nbsp;
+              Potentially Pentesting&nbsp;&nbsp;&nbsp;
             </div>
           </div>
         </div>

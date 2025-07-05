@@ -16,6 +16,20 @@ export default function Footer() {
           <FaLinkedin /> Milan Büki
         </a>
       </div>
+
+      <div className="footer-legal">
+        <p><strong>Impressum:</strong></p>
+        <p>
+          Milan Büki<br />
+          51491 Overath<br />
+          Deutschland<br />
+          <a href="mailto:milanbueki@gmx.de" style={{ color: "#fff", textDecoration: "none" }}>
+          E-Mail: milanbueki@gmx.de
+          </a>
+
+        </p>
+      </div>
+
       <p className="footer-copy">© {new Date().getFullYear()} Milan Büki</p>
     </footer>
   );

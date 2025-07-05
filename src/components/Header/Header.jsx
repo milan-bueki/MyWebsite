@@ -24,6 +24,19 @@ export default function Header() {
         >
           <FaLinkedin />
         </a>
+        <a
+          href="https://tryhackme.com/p/milanb"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="TryHackMe"
+>
+      <img
+          src="/tryhackme.png"
+          alt="TryHackMe"
+          style={{ height: "24px", marginTop: "2px" }}
+          />
+        </a>
+
       </div>
     </header>
   );
