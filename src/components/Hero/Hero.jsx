@@ -7,7 +7,7 @@ export default function Hero() {
   const handleDownload = (filePath) => {
     const link = document.createElement("a");
     link.href = filePath;
-    link.download = filePath.split("/").pop(); // z. B. "CV_de.pdf"
+    link.download = filePath.split("/").pop();
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -55,6 +55,11 @@ export default function Hero() {
               </button>
             </div>
           )}
+
+          {/* Neuer Tagebuch-Button */}
+          <a href="/diary" className="hero-diary-button">
+            Dietrichs Tagebuch
+          </a>
         </div>
       </div>
     </section>
