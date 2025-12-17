@@ -1,11 +1,14 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
-import LatestProject from "./components/LatestProject/LatestProject"
+import LatestProject from "./components/LatestProject/LatestProject";
 import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
-import Impressum from "./components/Impressum/Impressum";
+// import Impressum from "./components/Impressum/Impressum";
+import DiaryPage from "./components/DiaryPage/DiaryPage.jsx"; // Tagebuch-Seite
 
 const styles = {
   page: {
@@ -23,16 +26,37 @@ const styles = {
 
 function App() {
   return (
-    <>
-      <Header />
-      <div style={{ ...styles.page, paddingTop: 0 /* Platz für fixed Header */ }}>
-        <Hero />
-        <LatestProject />
-        {/*<Projects />*/}
-        <Contact />
-        <Footer />
+    <Router>
+      <div style={{ ...styles.page, paddingTop: 0 }}>
+        <Routes>
+          {/* Startseite MIT Header */}
+          <Route
+            path="/"
+            element={
+              <>
+                <Header />
+                <Hero />
+                <LatestProject />
+                {/* <Projects /> */}
+                <Contact />
+                <Footer />
+              </>
+            }
+          />
+
+          {/* Tagebuch-Seite OHNE Header */}
+          <Route
+            path="/diary"
+            element={
+              <>
+                <DiaryPage />
+                <Footer />
+              </>
+            }
+          />
+        </Routes>
       </div>
-    </>
+    </Router>
   );
 }
 
