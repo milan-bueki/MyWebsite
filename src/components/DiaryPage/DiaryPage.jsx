@@ -570,7 +570,7 @@ HV, VH, HH, HV, VV, VH, HH, HV, VV, VH, HH, VV, HV, HH, VH, VV, HV`}</pre>
     <div style={{ marginTop: "14px", textAlign: "center" }}>
       <a
         href="/assets/stegaongrphypicture.png"
-        download="stegaongrphypicture.png"
+        download="finalriddle.png"
         className="password-button"
       >
         Bild herunterladen
