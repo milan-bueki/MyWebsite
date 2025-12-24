@@ -5,6 +5,10 @@ import { InlineMath, BlockMath } from 'react-katex';
 
 
 const DiaryPage = () => {
+  const stegoUrl = `${import.meta.env.BASE_URL}assets/stegaongrphypicture.png`;
+  const riddle2Img = `${import.meta.env.BASE_URL}assets/vigenere.png`;
+
+
   const [password, setPassword] = useState("");
   const [unlocked, setUnlocked] = useState(false);
 
@@ -92,16 +96,16 @@ const DiaryPage = () => {
               Römer wären erstaunt.“
             </p>
 
-            <pre className="diary-riddle-table">
-{`01001 10111 10110 01001 00111 01111 00011 00101 01010 10110
-01000 10111 00111 10100 00110 00011 10101 10000 00011 00111
-00101 01010 10101 10110 00111 10100 00011 00111 10110 10101
-00111 01110 00100 10100 00011 10111 00101 01010 10101 10110
-00110 10111 00111 01011 10000 10101 00101 01010 01110 10111
-00111 10101 10101 00111 01110 11001 10001 10100 10110 00111
-10101 01110 00011 10111 10110 00111 10110 10010 01110 00011
-10000 00101 01101
-`}
+             <pre className="diary-riddle-table">
+          {`01001 10111 10110 01001 00111 01111 00011 00101 01010 10110
+          01000 10111 00111 10100 00110 00011 10101 10000 00011 00111
+          00101 01010 10101 10110 00111 10100 00011 00111 10110 10101
+          00111 01110 00100 10100 00011 10111 00101 01010 10101 10110
+          00110 10111 00111 01011 10000 10101 00101 01010 01110 10111
+          00111 10101 10101 00111 01110 11001 10001 10100 10110 00111
+          10101 01110 00011 10111 10110 00111 10110 10010 01110 00011
+          10000 00101 01101
+          `}
             </pre>
 
             <p>
@@ -126,7 +130,13 @@ const DiaryPage = () => {
                 placeholder="Lösungswort eingeben…"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-              />
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    handleUnlock();
+              }
+        }}
+/>
+
 
               <button className="password-button" onClick={handleUnlock}>
                 Weiter
@@ -177,6 +187,21 @@ UMWPMNUMWTNRCEHHAYBOCFNQNSRSTRTXXSRACWTT
 SGFKHRRVGMWTSPJOLZRGHETCRNGDHPL`}
                 </pre>
               </div>
+            {/* Bild zu Rätsel 2 */}
+              <div style={{ marginTop: "24px", textAlign: "center" }}>
+                <img
+                  src={riddle2Img}
+                  alt="Hinweis zu Rätsel 2"
+                  style={{
+                  width: "100%",
+                  maxWidth: "520px",
+                  display: "block",
+                  margin: "0 auto",
+                  borderRadius: "10px",
+                }}
+              />
+            </div>
+
             </>
           )}
 
@@ -192,6 +217,12 @@ SGFKHRRVGMWTSPJOLZRGHETCRNGDHPL`}
                 placeholder="Lösungswort eingeben…"
                 value={password2}
                 onChange={(e) => setPassword2(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    handleUnlock2();
+                  }
+                }}
+
               />
 
               <button className="password-button" onClick={handleUnlock2}>
@@ -312,6 +343,12 @@ SGFKHRRVGMWTSPJOLZRGHETCRNGDHPL`}
                 placeholder="Lösungswort eingeben…"
                 value={password3}
                 onChange={(e) => setPassword3(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    handleUnlock3();
+                  }
+                }}
+
               />
 
               <button className="password-button" onClick={handleUnlock3}>
@@ -346,7 +383,7 @@ SGFKHRRVGMWTSPJOLZRGHETCRNGDHPL`}
       </p>
 
       <p className="diary-riddle-hint">
-        Wichtig (verknüpft mit dem vorherigen Lösungswort):
+        Wichtig:
         <br />
         Dein Lösungswort war <strong>„Zweiundvierzig“</strong>. Damit gilt:
         Verwende ausschließlich die Fensterfolge{" "}
@@ -433,8 +470,7 @@ Fenster 4: HH=7,  HV=14, VH=14, VV=7`}</pre>
   Fensterregel: Lies Ereignisse alternierend aus Fenster <strong>4</strong> und <strong>2</strong>,
   bis du <strong>35 Bits</strong> hast.
   <br />
-  Dekodierung: 35 Bits → 7 Blöcke à 5 Bit →{" "}
-  <InlineMath math={String.raw`A=00000,\ B=00001,\ \dots,\ Z=11001`} />
+  Dekodierung: 35 Bits → 7 Blöcke à 5 Bit
 </p>
 
 
@@ -445,8 +481,7 @@ Key-Ereignisse Fenster 2 (in Reihenfolge):
 HV, VH, HH, HV, VV, VH, HH, HV, VV, VH, HH, VV, HV, HH, VH, VV, HV`}</pre>
 
       <p>
-        <strong>Aufgabe:</strong> Extrahiere 35 Bits mit der Fensterfolge 4,2,4,2,…,
-        dekodiere → das Ergebnis ist dein <strong>Codewort</strong>.
+        <strong>Aufgabe:</strong> Die extrahierten Bits sind das Codewort
       </p>
 
       {/* Passwortabfrage nach Rätsel 4 */}
@@ -461,6 +496,12 @@ HV, VH, HH, HV, VV, VH, HH, HV, VV, VH, HH, VV, HV, HH, VH, VV, HV`}</pre>
             placeholder="Codewort eingeben…"
             value={password4}
             onChange={(e) => setPassword4(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                handleUnlock4();
+              }
+            }}
+
           />
 
           <button className="password-button" onClick={handleUnlock4}>
@@ -481,6 +522,77 @@ HV, VH, HH, HV, VV, VH, HH, HV, VV, VH, HH, VV, HV, HH, VH, VV, HV`}</pre>
     </div>
   </>
 )}
+
+{unlocked4 && (
+  <div className="diary-riddle" style={{ marginTop: "32px" }}>
+    <h2 className="diary-title" style={{ fontSize: "1.5rem" }}>
+      Letzter Eintrag
+    </h2>
+
+    <p>
+      Wenn du bis hierher gekommen bist, dann weißt du,
+      dass Wissen selten offen daliegt.
+      Manche Informationen lassen sich nicht lesen,
+      nicht hören und nicht berechnen –
+      zumindest nicht auf den ersten Blick. Ich weiß es hat etwas
+      mit einer Schlange zu tun, mit der man die Informationen finden kann.
+    </p>
+
+    <p>"Der Schlüssel, den du brauchst, ist dir bereits bekannt.</p>
+
+    <p className="diary-riddle-hint">
+      Doch ein Schlüssel allein öffnet keine Tür,
+      wenn man nicht weiß, <em>wo</em> man ansetzen muss.
+      <br />
+      Das, was du suchst, befindet sich nicht im Text dieser Seite.
+    </p>
+
+    <p className="diary-riddle-hint">
+      Manchmal genügt es, sich auf das kleinste Bit zu konzentrieren."
+    </p>
+
+    {/* Bildanzeige */}
+    <div style={{ marginTop: "18px" }}>
+      <img
+        src="/assets/stegaongrphypicture.png"
+        alt="Tagebuch-Abbildung"
+        style={{
+          width: "100%",
+          maxWidth: "640px",
+          display: "block",
+          borderRadius: "12px",
+          margin: "0 auto",
+        }}
+      />
+    </div>
+
+    {/* Download-Button */}
+    <div style={{ marginTop: "14px", textAlign: "center" }}>
+      <a
+        href="/assets/stegaongrphypicture.png"
+        download="stegaongrphypicture.png"
+        className="password-button"
+      >
+        Bild herunterladen
+      </a>
+
+      <p style={{ marginTop: "10px", fontSize: "0.95rem", opacity: 0.85 }}>
+        Hinweis: Für weitere Schritte musst du mit der Originaldatei zu arbeiten.
+      </p>
+    </div>
+
+    <p>
+    Wenn du das Geheimnis dieses Bildes lüftest, lass es mich wissen.
+    </p> 
+
+
+    <p style={{ marginTop: "1rem", fontStyle: "italic" }}>
+      — Letzer Eintrag des Tagebuchs —
+    </p>
+  </div>
+)}
+
+
         </div>
 
         <footer className="diary-footer">
@@ -490,5 +602,8 @@ HV, VH, HH, HV, VV, VH, HH, HV, VV, VH, HH, VV, HV, HH, VH, VV, HV`}</pre>
     </main>
   );
 };
+
+
+
 
 export default DiaryPage;

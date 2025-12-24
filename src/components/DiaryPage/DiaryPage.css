@@ -1,10 +1,12 @@
 .diary-page {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 40px 16px 80px;
-  min-height: calc(100vh - 120px); /* bisschen Platz für Header/Footer */
-  color: #fbe6c5;
-  font-family: "Nothing You Could Do", cursive;
+  font-family: "Caveat", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.75;
+  color: #1f1f1f;
+}
+
+.diary-title {
+  font-family: "Nothing You Could Do", "Caveat", cursive;
 }
 
 .diary-page h1 {
