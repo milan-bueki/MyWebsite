@@ -5,10 +5,12 @@ import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import LatestProject from "./components/LatestProject/LatestProject";
 import Projects from "./components/Projects/Projects";
+import ProjectPages from "./components/Projects/ProjectPages/ProjectPages";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
-// import Impressum from "./components/Impressum/Impressum";
-import DiaryPage from "./components/DiaryPage/DiaryPage.jsx"; // Tagebuch-Seite
+import DiaryPage from "./components/DiaryPage/DiaryPage.jsx";
+import PortfolioProject from "./components/Projects/ProjectDetails/PortfolioProject/PortfolioProject";
+import Quiz from "./components/Projects/ProjectDetails/Quiz/Quiz";
 
 const styles = {
   page: {
@@ -29,7 +31,6 @@ function App() {
     <Router>
       <div style={{ ...styles.page, paddingTop: 0 }}>
         <Routes>
-          {/* Startseite MIT Header */}
           <Route
             path="/"
             element={
@@ -37,19 +38,51 @@ function App() {
                 <Header />
                 <Hero />
                 <LatestProject />
-                {/* <Projects /> */}
+                <Projects />
                 <Contact />
                 <Footer />
               </>
             }
           />
 
-          {/* Tagebuch-Seite OHNE Header */}
+          <Route
+            path="/projects"
+            element={
+              <>
+                <Header />
+                <ProjectPages />
+                <Footer />
+              </>
+            }
+          />
+
           <Route
             path="/diary"
             element={
               <>
                 <DiaryPage />
+                <Footer />
+              </>
+            }
+          />
+
+          <Route
+            path="/projects/portfolio"
+            element={
+              <>
+                <Header />
+                <PortfolioProject />
+                <Footer />
+              </>
+            }
+          />
+
+          <Route
+            path="/projects/quiz"
+            element={
+              <>
+                <Header />
+                <Quiz />
                 <Footer />
               </>
             }

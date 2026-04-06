@@ -1,5 +1,5 @@
 .diary-page {
-  font-family: "Caveat", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: "Nothing You Could Do", cursive;
   font-size: 18px;
   line-height: 1.75;
   color: #1f1f1f;
@@ -23,7 +23,7 @@
 
 /* Außen-Wrapper: Seite wird mittig gezeigt */
 .diary-wrapper {
-  min-height: calc(100vh - 80px); /* etwas Platz für Footer */
+  min-height: calc(100vh - 80px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,6 +57,59 @@
   position: relative;
   color: #3a2815;
   font-family: "Nothing You Could Do", cursive;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.diary-riddle-table {
+  max-width: 100%;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+  margin: 16px 0;
+  text-align: left;
+}
+
+.diary-riddle-table pre,
+.diary-riddle-table code {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.diary-riddle-table .katex-display {
+  display: block;
+  width: max-content;
+  min-width: 100%;
+  margin: 1rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  text-align: left;
+}
+
+.diary-riddle-table .katex {
+  white-space: nowrap;
+}
+
+.diary-riddle-table .katex-display > .katex {
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .diary-riddle-table .katex {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .diary-riddle-table .katex {
+    font-size: 0.8em;
+  }
 }
 
 /* leicht „abgerissene“ Kante unten */
@@ -153,6 +206,7 @@
   margin-top: 10px;
   font-size: 1rem;
   background: #fff4e0;
+  box-sizing: border-box;
 }
 
 .password-button {
@@ -176,4 +230,166 @@
   background: rgba(255, 255, 255, 0.6);
   border-left: 3px solid #1f1208;
   border-radius: 6px;
+}
+
+.diary-page img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Tablet und kleinere Geräte */
+@media (max-width: 768px) {
+  .diary-wrapper {
+    min-height: auto;
+    align-items: flex-start;
+    padding: 24px 12px 32px;
+  }
+
+  .diary-page {
+    max-width: 100%;
+    min-height: auto;
+    padding: 22px 18px 24px;
+    border-radius: 10px;
+  }
+
+  .diary-page h1 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+
+  .diary-title {
+    font-size: 1.65rem;
+    line-height: 1.2;
+  }
+
+  .diary-subtitle {
+    font-size: 0.92rem;
+    line-height: 1.4;
+  }
+
+  .diary-date {
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+  }
+
+  .diary-page p,
+  .diary-content {
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  .diary-header {
+    margin-bottom: 20px;
+  }
+
+  .diary-content p + p {
+    margin-top: 12px;
+  }
+
+  .diary-placeholder-note {
+    margin-top: 20px;
+    padding: 10px 12px;
+    font-size: 0.92rem;
+  }
+
+  .diary-footer {
+    margin-top: 22px;
+  }
+
+  .diary-signature {
+    font-size: 1rem;
+  }
+
+  .password-section,
+  .next-riddle {
+    margin-top: 24px;
+    padding: 16px;
+  }
+
+  .password-title {
+    font-size: 1.08rem;
+  }
+
+  .password-input {
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+
+  .password-button {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 1rem;
+  }
+}
+
+/* Kleine Handys */
+@media (max-width: 480px) {
+  .diary-wrapper {
+    padding: 18px 10px 24px;
+  }
+
+  .diary-page {
+    box-sizing: border-box;
+  }
+
+  .diary-page h1 {
+    font-size: 1.55rem;
+    margin-bottom: 10px;
+  }
+
+  .diary-title {
+    font-size: 1.4rem;
+  }
+
+  .diary-subtitle {
+    font-size: 0.86rem;
+  }
+
+  .diary-date {
+    font-size: 0.72rem;
+  }
+
+  .diary-page p,
+  .diary-content {
+    font-size: 0.93rem;
+    line-height: 1.55;
+  }
+
+  .diary-header {
+    margin-bottom: 16px;
+  }
+
+  .diary-content p + p {
+    margin-top: 10px;
+  }
+
+  .diary-placeholder-note,
+  .password-section,
+  .next-riddle {
+    margin-top: 18px;
+    padding: 12px;
+  }
+
+  .password-title {
+    font-size: 1rem;
+  }
+
+  .password-input {
+    margin-top: 8px;
+    padding: 10px 12px;
+  }
+
+  .password-button {
+    margin-top: 10px;
+    padding: 12px;
+  }
+
+  .diary-footer {
+    margin-top: 18px;
+  }
+
+  .diary-signature {
+    font-size: 0.95rem;
+  }
 }

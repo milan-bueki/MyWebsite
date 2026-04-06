@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Hero.css";
 
 export default function Hero() {
   const [showDropdown, setShowDropdown] = useState(false);
+  const dropdownRef = useRef(null);
 
   const handleDownload = (filePath) => {
     const link = document.createElement("a");
@@ -13,6 +14,24 @@ export default function Hero() {
     document.body.removeChild(link);
     setShowDropdown(false);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        showDropdown &&
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target)
+      ) {
+        setShowDropdown(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showDropdown]);
 
   return (
     <section id="hero">
@@ -37,10 +56,10 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero-download-wrapper" style={{ position: "relative" }}>
+        <div className="hero-download-wrapper" ref={dropdownRef}>
           <button
             className="hero-download-button"
-            onClick={() => setShowDropdown(!showDropdown)}
+            onClick={() => setShowDropdown((prev) => !prev)}
           >
             Download CV
           </button>
@@ -55,11 +74,6 @@ export default function Hero() {
               </button>
             </div>
           )}
-
-          {/* Neuer Tagebuch-Button */}
-          <a href="/diary" className="hero-diary-button">
-            Dietrichs Tagebuch
-          </a>
         </div>
       </div>
     </section>

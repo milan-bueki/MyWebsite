@@ -1,53 +1,84 @@
 /* Header.css */
 .header {
   width: 85%;
-  max-width: none;
   height: 60px;
   background-color: rgba(0, 0, 0, 0.6);
   color: #bbb;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 18px;
   font-weight: bold;
+
   position: fixed;
   top: 20px;
   left: 0;
   right: 0;
+
   z-index: 1000;
   padding: 0 60px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+
   border-radius: 10px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
   margin: 0 auto;
 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-
-
+/* 🔥 WICHTIG: Link wie normaler Text */
 .header-name {
   margin: 0;
   padding-left: 10px;
+
+  color: #ffffff;
+  text-decoration: none; /* entfernt Link-Unterstreichung */
+  cursor: pointer;
+
+  transition: color 0.25s ease, opacity 0.25s ease;
 }
 
+/* schöner Hover passend zu deinem Theme */
+.header-name:hover {
+  color: #a855f7;
+  opacity: 0.9;
+}
+
+/* rechte Seite */
 .header-links {
   margin-left: auto;
   display: flex;
   gap: 20px;
 }
 
+/* Icons */
 .header-links a {
   color: #bbb;
   font-size: 24px;
-  transition: color 0.3s;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
+/* Hover Icons */
 .header-links a:hover {
   color: #fff;
+  transform: translateY(-1px);
 }
+
+/* Layout */
+.header-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Mobile */
 @media (max-width: 600px) {
   .header {
     flex-direction: column;
