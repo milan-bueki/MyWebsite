@@ -3,6 +3,14 @@ import { Link } from "react-router-dom";
 import "./ProjectPages.css";
 
 const projectList = [
+    {
+  title: "QMunicate Website",
+  description:
+    "Landing page for QMunicate with modern React components, clean navigation, legal pages, and responsive frontend structure.",
+  tags: ["React", "Vite", "Frontend", "Web Design"],
+  link: "/projects/qmunicate",
+  featured: true,
+},
   {
     title: "Personal Portfolio Website",
     description:
@@ -19,6 +27,7 @@ const projectList = [
     link: "/projects/quiz",
     featured: false,
   },
+
 ];
 
 export default function ProjectPages() {

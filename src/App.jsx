@@ -11,6 +11,7 @@ import Footer from "./components/Footer/Footer";
 import DiaryPage from "./components/DiaryPage/DiaryPage.jsx";
 import PortfolioProject from "./components/Projects/ProjectDetails/PortfolioProject/PortfolioProject";
 import Quiz from "./components/Projects/ProjectDetails/Quiz/Quiz";
+import QMunicateWebsite from "./components/Projects/ProjectDetails/QMunicateWebsite/QMunicateWebsite.jsx";
 
 const styles = {
   page: {
@@ -83,6 +84,17 @@ function App() {
               <>
                 <Header />
                 <Quiz />
+                <Footer />
+              </>
+            }
+          />
+
+          <Route
+            path="/projects/qmunicate"
+            element={
+              <>
+                <Header />
+                <QMunicateWebsite />
                 <Footer />
               </>
             }

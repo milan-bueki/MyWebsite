@@ -14,11 +14,19 @@ const projects = [
   {
     title: "Cryptic Quiz Challenge",
     description:
-    "Interactive puzzle-based quiz combining decoding, cryptography, steganography, and playful exploration.",
+      "Interactive puzzle-based quiz combining decoding, cryptography, steganography, and playful exploration.",
     tech: ["React", "JavaScript", "CSS", "Python"],
     link: "/projects",
     buttonText: "View Project",
-},
+  },
+  {
+    title: "QMunicate Website",
+    description:
+      "Modern React landing page for QMunicate with clean navigation, legal pages, branding, and responsive design.",
+    tech: ["React", "Vite", "CSS", "Frontend"],
+    link: "/projects",
+    buttonText: "View Project",
+  },
 ];
 
 export default function Projects() {
