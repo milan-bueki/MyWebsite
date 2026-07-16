@@ -31,12 +31,7 @@ export default function Wetter() {
       <div className="wetter-page-inner">
         <section className="wetter-hero">
           <p className="wetter-eyebrow">Wetter</p>
-          <h1 className="wetter-title">Nimbus Wetterseite</h1>
-          <p className="wetter-description">
-            Diese Seite zeigt die extern eingebettete Wetter-Ansicht. Falls die
-            Einbettung blockiert wird, kannst du die Seite alternativ in einem
-            neuen Tab öffnen.
-          </p>
+
         </section>
 
         <div className="wetter-frame-wrap">
