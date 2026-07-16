@@ -12,6 +12,7 @@ import DiaryPage from "./components/DiaryPage/DiaryPage.jsx";
 import PortfolioProject from "./components/Projects/ProjectDetails/PortfolioProject/PortfolioProject";
 import Quiz from "./components/Projects/ProjectDetails/Quiz/Quiz";
 import QMunicateWebsite from "./components/Projects/ProjectDetails/QMunicateWebsite/QMunicateWebsite.jsx";
+import Wetter from "./components/Wetter/Wetter";
 
 const styles = {
   page: {
@@ -95,6 +96,17 @@ function App() {
               <>
                 <Header />
                 <QMunicateWebsite />
+                <Footer />
+              </>
+            }
+          />
+
+          <Route
+            path="/wetter"
+            element={
+              <>
+                <Header />
+                <Wetter />
                 <Footer />
               </>
             }

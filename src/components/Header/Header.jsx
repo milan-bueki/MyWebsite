@@ -12,7 +12,11 @@ export default function Header() {
           Milan Büki
         </Link>
 
-        <div className="header-links">
+        <nav className="header-links" aria-label="Hauptnavigation">
+          <Link to="/wetter" className="header-button">
+            Wetter
+          </Link>
+
           <a
             href="https://github.com/milan-bueki"
             target="_blank"
@@ -40,10 +44,10 @@ export default function Header() {
             <img
               src="/tryhackme.png"
               alt="TryHackMe"
-              style={{ height: "24px", marginTop: "2px" }}
+              className="header-icon-img"
             />
           </a>
-        </div>
+        </nav>
       </div>
     </header>
   );
