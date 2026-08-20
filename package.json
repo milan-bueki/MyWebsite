@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:date-planner": "powershell -ExecutionPolicy Bypass -File ./scripts/build-date-planner.ps1",
+    "build:full": "npm run build:date-planner && npm run build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
